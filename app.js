@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const mongoose = require('mongoose');
+var Mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -20,8 +20,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/nkatadb');
+Mongoose.Promise = global.Promise;
+Mongoose.connect('mongodb://localhost:27017/nkatadb');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

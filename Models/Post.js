@@ -1,6 +1,6 @@
-const Mongoose = require('mongoose');
+var Mongoose = require('mongoose');
 
-let PostSchema = Mongoose.Schema({
+var PostSchema = Mongoose.Schema({
     time: Date,
     postBody: String,
     user: {type:Mongoose.Schema.Types.ObjectId, ref:'User'},

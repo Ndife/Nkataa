@@ -1,6 +1,6 @@
-const Mongoose = require('mongoose');
+var Mongoose = require('mongoose');
 
-let commentSchema = Mongoose.Schema({
+var commentSchema = Mongoose.Schema({
     name: String,
     time: Date,
     commentBody: String,
