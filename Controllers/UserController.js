@@ -20,7 +20,8 @@ exports.getById = (req,res,id)=>{
 
 
 exports.deleteById = (req,res,id)=>{
-    id = {id:req.query._id}
+    id = {_id:req.query._id}
     return userService.deleteById(req,res,id);
 }
+
 
