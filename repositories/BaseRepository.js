@@ -21,8 +21,8 @@ class BaseRepository{
         this.model.remove(id,callback);
     }
 
-    update(id,update,callback){
-        this.model.findByAndUupdate(id,update,callback);
+    updateUser(id,data,callback){
+        this.model.findByIdAndUpdate(id,data,callback);
     }
 }
 
