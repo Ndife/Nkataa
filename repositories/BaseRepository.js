@@ -14,7 +14,7 @@ class BaseRepository{
     }
 
     getById(id,callback){
-        this.model.findById(id,callback);
+        this.model.findById(id,'-password',callback);
     }
 
     deleteById(id,callback){
