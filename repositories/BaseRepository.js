@@ -4,24 +4,25 @@ class BaseRepository{
         this.model = model;
     }
 
-    get(option,callback){
-        this.model.find(option,callback);
+    get(options,callback){
+        this.model.find(options,'-password',callback);
     }
 
-    add(option,data){
-        this.model.create(option,data);
+    add(data,callback){
+        this.model.create(data,callback);
+      
     }
 
     getById(id,callback){
         this.model.findById(id,callback);
     }
 
-    deleteById(option,callback){
-        this.model.remove(option,callback);
+    deleteById(id,callback){
+        this.model.remove(id,callback);
     }
 
-    update(id,option,callback){
-        this.model.update(id,option,callback);
+    update(id,update,callback){
+        this.model.findByAndUupdate(id,update,callback);
     }
 }
 
