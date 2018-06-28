@@ -30,5 +30,13 @@ exports.getUserByParams = (req,res,options)=>{
      return userService.getUserByParam(req,res,options)
  }
 
-
+ exports.updateUser = (req,res)=>{
+    var id = {_id:req.params.id} 
+    let data ={
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+    };
+    return userService.updateUser(req,res,id,data);
+ }
  

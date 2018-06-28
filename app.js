@@ -23,15 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 Mongoose.Promise = global.Promise;
 Mongoose.connect('mongodb://localhost:27017/nkatadb');
 
-// checks whether mongodb is connected or not
-var db = Mongoose.connection;
-db.on('error', function (err) {
-console.log('connection error', err);
-});
-db.once('open', function () {
-console.log('connected.');
-});
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
