@@ -13,3 +13,8 @@ exports.getUsers = (req,res)=>{
     return userService.getAllUsers(req,res);
 }
 
+
+exports.getById = (req,res,id)=>{
+id = req.query._id;
+return userService.geById(req,res,id);
+}
