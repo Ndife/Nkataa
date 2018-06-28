@@ -25,3 +25,10 @@ exports.deleteById = (req,res,id)=>{
 }
 
 
+exports.getUserByParams = (req,res,options)=>{
+    options = req.query;
+     return userService.getUserByParam(req,res,options)
+ }
+
+
+ 
