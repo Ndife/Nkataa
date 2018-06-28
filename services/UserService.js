@@ -21,7 +21,7 @@ exports.geById= (req,res,id)=>{
     });
 }
 
-exports.deleteById= function(req,res,id){
+exports.deleteById= function(req,res,id){ 
     userRepository.deleteById(id,(err)=>{
         if(err) res.json({err: err, message:"Failed to delete user"});
         res.json({message:'user deleted successfully'});
