@@ -35,3 +35,9 @@ exports.getUserByParam = (req,res,options)=>{
    }); 
 }
 
+exports.updateUser = (req,res,id,data)=>{
+    userRepository.updateUser(id,data,(err)=>{
+        if(err) res.json({err:err, message:'Sorry, could not update user'});
+        res.json({message:'User updated successfully'});
+    });
+}
