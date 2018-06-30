@@ -26,6 +26,6 @@ class BaseRepository{
     }
 }
 
-module.exports = function(model){
+module.exports =(model)=>{
     return new BaseRepository(model);
 }
