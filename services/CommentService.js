@@ -6,3 +6,10 @@ module.exports.addComment = (req,res,comment)=>{
         res.json({message:'comment added successfully'});
     });
 }
+
+module.exports.getComments = (req,res)=>{
+    commentRepo.get({},(err,comments)=>{
+        if(err) res.json({err:err, message:'Sorry, something went wrong'});
+        res.json(comments);
+    });
+}
