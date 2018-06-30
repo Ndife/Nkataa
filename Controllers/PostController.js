@@ -24,10 +24,15 @@ exports.getByparams = (req,res)=>{
 }
 
 exports.updatePost = (req,res) =>{
-    id = {_id:req.params.id} 
+    id = {_id:req.params.id}
 data = {
     time: new Date(),
     postBody: req.body.postBody,
 }
 return postService.updatePost(req,res,id,data);
+}
+
+exports.deletePost = (req,res)=>{
+    id = {_id:req.query._id}
+    return postService.deletePost(req,res,id);
 }
