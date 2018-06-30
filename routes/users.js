@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var userController = require('../Controllers/UserController');
-var postController = require('../Controllers/PostController');
 
 /* GET users listing. */
 router.post('/create',userController.addUsers); 
