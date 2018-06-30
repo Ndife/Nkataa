@@ -17,3 +17,8 @@ exports.getById = (req,res,id)=>{
     id = {_id:req.query._id};
     return postService.getPostById(req,res,id);
 }
+
+exports.getByparams = (req,res,option)=>{
+    option = req.query;
+    return postService.getByParams(req,res,option);
+}
