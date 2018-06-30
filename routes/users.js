@@ -16,5 +16,6 @@ router.post('/addPost', postController.addPost);
 router.get('/getAllPost', postController.getPosts);
 router.get('/getPostById',postController.getById);
 router.get('/getPostByParams',postController.getByparams); 
+router.post('/updatePost/:id',postController.updatePost); 
 
 module.exports = router;
