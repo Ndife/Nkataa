@@ -3,8 +3,7 @@ var Mongoose = require('mongoose');
 var PostSchema = Mongoose.Schema({
     time: Date,
     postBody: String,
-    user: {type:Mongoose.Schema.Types.ObjectId, ref:'User'},
-    comment: {type:Mongoose.Schema.Types.ObjectId, ref:'Comment'}
+    userId: {type:Mongoose.Schema.Types.ObjectId, ref:'User'},
 });
 
 module.exports = Mongoose.model('Post', PostSchema);
