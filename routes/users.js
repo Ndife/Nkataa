@@ -11,11 +11,4 @@ router.get('/getUsersByParams',userController.getUserByParams);
 router.get('/delete',userController.deleteById);
 router.post('/update/:id',userController.updateUser);
 
-/* GET posts listing */
-router.post('/addPost', postController.addPost);
-router.get('/getAllPost', postController.getPosts);
-router.get('/getPostById',postController.getById);
-router.get('/getPostByParams',postController.getByparams); 
-router.post('/updatePost/:id',postController.updatePost); 
-
 module.exports = router;
