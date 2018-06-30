@@ -21,3 +21,9 @@ exports.getPostById = (req,res,id)=>{
     });
 }
 
+exports.getByParams = (req,res,option)=>{
+    postRepo.get(option,(err,data)=>{
+        if(err) res.json({err: err, message:'Sorry, failed to the the user'});
+        res.json(data);
+    });
+}
