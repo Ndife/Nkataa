@@ -27,3 +27,17 @@ exports.getByParams = (req,res,option)=>{
         res.json(data);
     });
 }
+
+exports.updatePost = (req,res,id,data)=>{
+    postRepo.updateUser(id,data,(err)=>{
+        if(err) res.json({err:err, message:'something wrong, failed to update'});
+        res.json({message:'Post updated successfully'});
+    });
+}
+
+exports.deletePost = (req,res,id)=>{
+postRepo.deleteById(id,(err,data)=>{
+    if(err) res.json({err:err, message:'failed to delete user'});
+    res.json({message:'user deleted successfully'});
+});
+}
