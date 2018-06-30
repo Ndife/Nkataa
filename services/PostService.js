@@ -8,8 +8,15 @@ exports.addPost = (req,res,post)=>{
 }
 
 exports.getAllPost = (req,res)=>{
-    postRepo.get({},(err,data)=>{
-        if(err) res.json({err:err, message:'sorry, could not get post'});
+    postRepo.get({},(err,post)=>{
+        if(err) res.json({err:err, message:'sorry, could not get posts'});
+        res.json(post);
+    });
+}
+
+exports.getPostById = (req,res,id)=>{
+    postRepo.get(id,(err,data)=>{
+        if(err) res.json({err:err, message:'sorry, faild to get post'});
         res.json(data);
     });
 }
