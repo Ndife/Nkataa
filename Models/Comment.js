@@ -4,8 +4,8 @@ var commentSchema = Mongoose.Schema({
     name: String,
     time: Date,
     commentBody: String,
-    user: {type:Mongoose.Schema.Types.ObjectId, ref:'User'},
-    post: {type:Mongoose.Schema.Types.ObjectId, ref:'Post'},
+    userId: {type:Mongoose.Schema.Types.ObjectId, ref:'User'},
+    postId: {type:Mongoose.Schema.Types.ObjectId, ref:'Post'},
 });
 
 module.exports =Mongoose.model('Comment',commentSchema);

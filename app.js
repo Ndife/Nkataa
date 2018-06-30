@@ -5,9 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var Mongoose = require('mongoose');
 
+/* REQUIRES all routers */
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var postsRoutner = require('./routes/posts');
+var postsRouter = require('./routes/posts');
+var commentRouter = require('./routes/comments');
 
 var app = express();
 
@@ -24,9 +26,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 Mongoose.Promise = global.Promise;
 Mongoose.connect('mongodb://localhost:27017/nkatadb');
 
+/* USE all routes */
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/posts',postsRoutner);
+app.use('/posts', postsRouter);
+app.use('/comments',commentRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
