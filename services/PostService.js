@@ -15,8 +15,9 @@ exports.getAllPost = (req,res)=>{
 }
 
 exports.getPostById = (req,res,id)=>{
-    postRepo.get(id,(err,data)=>{
+    postRepo.getById(id,(err,data)=>{
         if(err) res.json({err:err, message:'sorry, faild to get post'});
         res.json(data);
     });
 }
+
