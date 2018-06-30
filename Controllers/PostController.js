@@ -14,6 +14,6 @@ exports.getPosts = (req,res)=>{
 }
 
 exports.getById = (req,res,id)=>{
-    id = req.query._id;
+    id = {_id:req.query._id};
     return postService.getPostById(req,res,id);
 }
