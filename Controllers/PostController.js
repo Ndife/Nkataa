@@ -12,3 +12,8 @@ exports.addPost = (req,res)=>{
 exports.getPosts = (req,res)=>{
     return postService.getAllPost(req,res);
 }
+
+exports.getById = (req,res,id)=>{
+    id = req.query._id;
+    return postService.getPostById(req,res,id);
+}
