@@ -10,3 +10,7 @@ module.exports.addComment = (req,res)=>{
     }
    return commentService.addComment(req,res,comment);
 }
+
+module.exports.getComments = (req,res)=>{
+return commentService.getComments(req,res);
+}
