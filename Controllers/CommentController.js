@@ -15,7 +15,3 @@ exports.getComments = (req,res)=>{
 return commentService.getComments(req,res);
 }
 
-exports.getById = (req,res)=>{
-    id = {_id:req.query._id};
-return commentService.getCommentById(req,res,id);
-}
