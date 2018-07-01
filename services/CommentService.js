@@ -20,3 +20,10 @@ exports.updateComments = (req,res,id,data) =>{
         res.json({message:'comment updated successfully'});
     });
 }
+
+exports.deleteComment = (req,res,id) =>{
+    commentRepo.deleteById(id,(err)=>{
+        if(err) res.json({err:err, message:'Error occur, could not delete comment'});
+        res.json({message:'comment deleted successfully'});
+    });
+}
