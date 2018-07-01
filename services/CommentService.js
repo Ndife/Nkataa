@@ -14,3 +14,9 @@ exports.getComments = (req,res)=>{
     });
 }
 
+exports.updateComments = (req,res,id,data) =>{
+    commentRepo.updateUser(id,data,(err)=>{
+        if(err) res.json({err:err, message:'comment failed to update'});
+        res.json({message:'comment updated successfully'});
+    });
+}
