@@ -24,3 +24,8 @@ exports.updateComments = (req,res)=>{
     }
     return commentService.updateComments(req,res,id,data);
 }
+
+exports.deleteComments = (req,res)=>{
+    id ={_id:req.query._id};
+    return commentService.deleteComment(req,res,id);
+}
