@@ -14,9 +14,3 @@ exports.getComments = (req,res)=>{
     });
 }
 
-exports.getCommentById= (req,res,id)=>{
-commentRepo.getById(id,(err,comment)=>{
-    if(err) res.json({err:err, message:'Faild to get Comment by Id'});
-    res.json(comment);
-});
-}
