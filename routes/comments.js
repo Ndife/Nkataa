@@ -4,5 +4,5 @@ var router = express.Router();
 
 router.post('/addComment',commentController.addComment);
 router.get('/getComments',commentController.getComments);
-
+router.post('/updateComment/:id', commentController.updateComments); 
 module.exports = router;
