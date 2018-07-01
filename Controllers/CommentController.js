@@ -15,3 +15,12 @@ exports.getComments = (req,res)=>{
 return commentService.getComments(req,res);
 }
 
+exports.updateComments = (req,res)=>{
+    id = {_id:req.params.id}
+    data = {
+        name: req.body.name,
+        date: new Date,
+        commentBody: req.body.commentBody,
+    }
+    return commentService.updateComments(req,res,id,data);
+}
